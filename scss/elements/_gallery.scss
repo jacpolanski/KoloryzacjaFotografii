@@ -1,0 +1,55 @@
+.gallery {
+  columns: 5 200px;
+  column-gap: 1.5rem;
+  width: 90vw;
+  margin: 0 auto;
+
+  &__image {
+    width: 100%;
+    filter: grayscale(1);
+  }
+
+  &__caption {
+    font-family: 'IM Fell French Canon SC', serif;
+    text-align: justify;
+    text-align-last: center;
+    text-shadow: rgba(131, 131, 131, 0.1) 0 0 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 25px 15px;
+    width: 100%;
+    font-size: 16px;
+    color: black;
+    opacity: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .1) 0%, rgba(255, 255, 255, .5) 100%);
+    transition: .3s;
+  }
+
+  &__thumb {
+    position: relative;
+    margin: -12px;
+  }
+
+  &__link {
+    margin: 0.5rem 0;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: .5rem;
+    transition: all .25s ease-in-out;
+
+    &:hover {
+      .gallery__image {
+        filter: grayscale(0);
+        transform: scale(1.05);
+      }
+
+      .gallery__caption {
+        opacity: 1;
+      }
+    }
+  }
+}
+

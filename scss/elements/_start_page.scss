@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-size: .8rem;
+  font-family: 'Roboto', sans-serif;
+
+  @include largeMobile {
+    font-size: 1.1rem;
+  }
+  @include tablet {
+    font-size: 1.7rem;
+  }
+  @include laptop {
+    font-size: 2.7rem;
+  }
+  @include largeLaptop {
+    font-size: 3.0rem;
+  }
+  @include tv {
+    font-size: 3.0rem;
+  }
+}
+
+.grid {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1000px;
+  list-style: none;
+  text-align: center;
+}
+
+.grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  min-width: 325px;
+  max-width: 1000px;
+  max-height: 100vh;
+  width: 100vw;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid figure > div.frame {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 1000px;
+  opacity: 1;
+  background: black url("../image/rozbiórka_soboru/Rozbiorka_Soboru_Aleksandra_Newskiego.jpg") no-repeat center/100vh;
+
+}
+
+.grid figure div.top {
+  display: block;
+  min-height: 100%;
+  max-width: 1000px;
+  opacity: 0;
+  background: black url("../image/rozbiórka_soboru/Rozbiorka_Soboru_Aleksandra_Newskiego2.jpg") no-repeat center/100vh;
+}
+
+.grid figure figcaption {
+  padding: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  backface-visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+  pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+}
+
+.grid figure figcaption a {
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+
+  position: absolute;
+}
+
+.grid figure h2 {
+  text-shadow: 0 0 6px rgba(255,255,255,0.7);
+  word-spacing: -0.15em;
+  font-weight: 300;
+
+}
+
+.grid figure h2 span {
+  font-weight: 900;
+}
+
+.grid figure h2,
+.grid figure p {
+  margin: 0;
+}
+
+.grid figure p {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: rgb(255, 179, 83);
+  font-family: 'Comforter', cursive;
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+
+figure.effect-layla {
+  background: black;
+}
+
+figure.effect-layla div {
+  height: 100vh;
+}
+
+figure.effect-layla figcaption {
+  padding: 3em;
+}
+
+figure.effect-layla figcaption::before,
+figure.effect-layla figcaption::after {
+  position: absolute;
+  content: '';
+  opacity: 0;
+}
+
+figure.effect-layla figcaption::before {
+  top: 50px;
+  right: 30px;
+  bottom: 50px;
+  left: 30px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: scale(0, 1);
+  transform-origin: 0 0;
+}
+
+figure.effect-layla figcaption::after {
+  top: 30px;
+  right: 50px;
+  bottom: 30px;
+  left: 50px;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  transform: scale(1, 0);
+  transform-origin: 100% 0;
+}
+
+figure.effect-layla h2 {
+  transition: transform $startPageTransform;
+}
+
+figure.effect-layla p,
+figure.effect-layla i {
+  text-transform: none;
+  opacity: 0;
+  transform: translate3d(0, -25px, 0);
+}
+
+figure.effect-layla p {
+  padding-top: 0.5em;
+}
+
+figure.effect-layla div,
+figure.effect-layla figcaption::before,
+figure.effect-layla figcaption::after,
+figure.effect-layla p,
+figure.effect-layla i {
+  transition: opacity 3 * $startPageTransform, transform $startPageTransform;
+}
+
+figure.effect-layla:hover div.top {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+figure.effect-layla:hover figcaption::before,
+figure.effect-layla:hover figcaption::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+figure.effect-layla:hover h2,
+figure.effect-layla:hover p,
+figure.effect-layla:hover i {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  position: relative;
+}
+
+figure.effect-layla:hover figcaption::after,
+figure.effect-layla:hover h2,
+figure.effect-layla:hover p,
+figure.effect-layla:hover div,
+figure.effect-layla:hover i {
+  transition-delay: calc($startPageTransform / 2);
+}

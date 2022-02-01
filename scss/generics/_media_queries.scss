@@ -1,0 +1,36 @@
+@mixin smallMobile {
+  @media screen and (max-width: $smallMobile){
+    @content
+  }
+}
+
+
+@mixin largeMobile {
+  @media screen and (min-width: $mediumMobile + 1) and (max-width: $largeMobile){
+    @content
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $largeMobile + 1) and (max-width: $tablet){
+    @content
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: $tablet + 1) and (max-width: $laptop){
+    @content
+  }
+}
+
+@mixin largeLaptop {
+  @media screen and (min-width: $laptop + 1) and (max-width: $largeLaptop){
+    @content
+  }
+}
+
+@mixin tv {
+  @media screen and (min-width: $largeLaptop){
+    @content
+  }
+}
